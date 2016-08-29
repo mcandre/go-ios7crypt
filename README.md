@@ -20,5 +20,12 @@ IOS7Crypt is an educational resource illustrating some fundamentals of introduct
 
 ```
 $ make
-...
+go build -o bin/ios7crypt cli.go
+
+
+$ bin/ios7crypt -e monkey
+12140a19190e15
+
+$ bin/ios7crypt -d 07022e42450c00
+monkey
 ```

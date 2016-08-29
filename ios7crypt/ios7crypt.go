@@ -5,6 +5,9 @@ import (
 	"math/big"
 	"fmt"
 	"bytes"
+	"errors"
+	"strconv"
+	"encoding/hex"
 )
 
 const Version = "0.0.1"
@@ -22,7 +25,7 @@ func Encrypt(password string) string {
 		panic(err)
 	}
 
-	seed := seedBig.Int64()
+	seed := int(seedBig.Int64())
 
 	var hashBuffer bytes.Buffer
 
@@ -31,7 +34,7 @@ func Encrypt(password string) string {
 	plainBytes := []byte(password)
 
 	for i, plainByte := range plainBytes {
-		keyByte := Xlat(int(seed) + i)
+		keyByte := Xlat(seed + i)
 		cipherByte := plainByte ^ keyByte
 		hashBuffer.WriteString(fmt.Sprintf("%02x", cipherByte))
 	}
@@ -39,8 +42,37 @@ func Encrypt(password string) string {
 	return hashBuffer.String()
 }
 
-func Decrypt(hash string) string {
-	// ...
+func Decrypt(hash string) (string, error) {
+	if len(hash) < 2 {
+		return "", errors.New("Hash missing seed digits")
+	}
 
-	return ""
+	seedString := hash[:2]
+
+	seed, err := strconv.Atoi(seedString)
+
+	if err != nil {
+		return "", errors.New("Hash seed fails to parse as a decimal number in [0, 16)")
+	}
+
+	var passwordBuffer bytes.Buffer
+
+	for i := 0; i < (len(hash)-2)/2; i++ {
+		hexPair := hash[i*2 + 2:i*2 + 4]
+		cipherBytes, err := hex.DecodeString(hexPair)
+
+		if err != nil {
+			panic(err)
+		}
+
+		cipherByte := cipherBytes[0]
+		keyByte := Xlat(seed + i)
+		plainByte := cipherByte ^ keyByte
+
+		plainRune := rune(plainByte)
+
+		passwordBuffer.WriteRune(plainRune)
+	}
+
+	return passwordBuffer.String(), nil
 }
