@@ -6,7 +6,6 @@
 $ make
 go build -o bin/ios7crypt cli.go
 
-
 $ bin/ios7crypt -e monkey
 12140a19190e15
 
