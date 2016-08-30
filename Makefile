@@ -1,4 +1,11 @@
-BIN=bin/ios7crypt
+# Windows
+ifeq ($(OS),Windows_NT)
+	EXTENSION=.exe
+else
+	EXTENSION=
+endif
+
+BIN=bin/ios7crypt$(EXTENSION)
 
 all: test
 
@@ -11,3 +18,6 @@ $(BIN): cli.go
 
 clean:
 	-rm -rf bin
+
+os:
+	echo $(OS)
