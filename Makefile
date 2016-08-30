@@ -1,8 +1,10 @@
 # Windows
 ifeq ($(OS),Windows_NT)
 	EXTENSION=.exe
+	RM=cmd /c rmdir /s /q
 else
 	EXTENSION=
+	RM=rm -rf
 endif
 
 BIN=bin/ios7crypt$(EXTENSION)
@@ -17,7 +19,4 @@ $(BIN): cli.go
 	go build -o $(BIN) cli.go
 
 clean:
-	-rm -rf bin
-
-os:
-	echo $(OS)
+	-$(RM) bin
