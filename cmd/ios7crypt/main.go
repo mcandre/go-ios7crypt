@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/docopt/docopt-go"
 	"fmt"
-	"./ios7crypt"
+	"github.com/docopt/docopt-go"
+	"github.com/mcandre/go-ios7crypt"
 )
 
 const Usage = `Usage:
