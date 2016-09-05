@@ -34,3 +34,10 @@ Set the environment variable `GOPATH` to some directory like `$HOME/go`, then:
 ```
 $ go get github.com/docopt/docopt-go
 ```
+
+# INSTALL
+
+```
+$ go get github.com/mcandre/go-ios7crypt
+$ go install github.com/mcandre/go-ios7crypt/cmd/ios7crypt
+```
