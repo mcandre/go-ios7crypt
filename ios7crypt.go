@@ -62,7 +62,7 @@ func Decrypt(hash string) (string, error) {
 		cipherBytes, err := hex.DecodeString(hexPair)
 
 		if err != nil {
-			panic(err)
+			return "", errors.New("Hash fails to parse as a hexadecimal number ([0-9a-fA-F]{2}+)")
 		}
 
 		cipherByte := cipherBytes[0]
