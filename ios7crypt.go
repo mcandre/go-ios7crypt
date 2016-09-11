@@ -69,9 +69,7 @@ func Decrypt(hash string) (string, error) {
 		keyByte := Xlat(seed + i)
 		plainByte := cipherByte ^ keyByte
 
-		plainRune := rune(plainByte)
-
-		passwordBuffer.WriteRune(plainRune)
+		passwordBuffer.WriteByte(plainByte)
 	}
 
 	return passwordBuffer.String(), nil
