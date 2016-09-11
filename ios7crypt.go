@@ -18,11 +18,11 @@ func Xlat(index int) byte {
 	return xlat[index%len(xlat)]
 }
 
-func Encrypt(password string) string {
+func Encrypt(password string) (string, error) {
 	seedBig, err := rand.Int(rand.Reader, big.NewInt(16))
 
 	if err != nil {
-		panic(err)
+		return "", errors.New("Seed outside of [0, 15]")
 	}
 
 	seed := int(seedBig.Int64())
@@ -39,7 +39,7 @@ func Encrypt(password string) string {
 		hashBuffer.WriteString(fmt.Sprintf("%02x", cipherByte))
 	}
 
-	return hashBuffer.String()
+	return hashBuffer.String(), nil
 }
 
 func Decrypt(hash string) (string, error) {

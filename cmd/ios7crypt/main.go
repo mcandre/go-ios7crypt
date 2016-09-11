@@ -31,7 +31,13 @@ func main() {
 
 	switch {
 	case passwordStatus:
-		fmt.Println(ios7crypt.Encrypt(password))
+		hash, err := fmt.Println(ios7crypt.Encrypt(password))
+
+		if err != nil {
+			panic(err)
+		}
+
+		fmt.Println(hash)
 	case hashStatus:
 		password, err := ios7crypt.Decrypt(hash)
 
