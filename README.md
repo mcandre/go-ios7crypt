@@ -38,6 +38,7 @@ $ go get github.com/docopt/docopt-go
 # INSTALL
 
 ```
-$ go get github.com/mcandre/go-ios7crypt
-$ go install github.com/mcandre/go-ios7crypt/cmd/ios7crypt
+$ go get github.com/mcandre/go-ios7crypt/...
 ```
+
+(Yes, include the ellipsis as well, it's the magic Go syntax for downloading, building, and installing all components of a package, including any libraries and command line tools.)
