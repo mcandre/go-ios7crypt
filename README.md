@@ -32,7 +32,8 @@ IOS7Crypt is an educational resource illustrating some fundamentals of introduct
 Set the environment variable `GOPATH` to some directory like `$HOME/go`, then:
 
 ```
-$ go get github.com/docopt/docopt-go
+$ git submodule init
+$ git submodule update
 ```
 
 # INSTALL
