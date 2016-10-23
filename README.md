@@ -32,7 +32,7 @@ IOS7Crypt is an educational resource illustrating some fundamentals of introduct
 Set the environment variable `GOPATH` to some directory like `$HOME/go`, then:
 
 ```
-git submodule update --init --recursive
+$ git submodule update --init --recursive
 ```
 
 # INSTALL
