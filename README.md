@@ -43,3 +43,10 @@ $ go get github.com/mcandre/go-ios7crypt/...
 ```
 
 (Yes, include the ellipsis as well, it's the magic Go syntax for downloading, building, and installing all components of a package, including any libraries and command line tools.)
+
+# COMPILE AND INSTALL LOCALLY
+
+```
+$ git submodule update --init --recursive
+$ sh -c 'cd cmd/ios7crypt && go install'
+```
