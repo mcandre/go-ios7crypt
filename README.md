@@ -32,8 +32,7 @@ IOS7Crypt is an educational resource illustrating some fundamentals of introduct
 Set the environment variable `GOPATH` to some directory like `$HOME/go`, then:
 
 ```
-$ git submodule init
-$ git submodule update
+git submodule update --init --recursive
 ```
 
 # INSTALL
@@ -47,6 +46,5 @@ $ go get github.com/mcandre/go-ios7crypt/...
 # COMPILE AND INSTALL LOCALLY
 
 ```
-$ git submodule update --init --recursive
 $ sh -c 'cd cmd/ios7crypt && go install'
 ```
