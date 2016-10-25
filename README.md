@@ -48,3 +48,11 @@ $ go get github.com/mcandre/go-ios7crypt/...
 ```
 $ sh -c 'cd cmd/ios7crypt && go install'
 ```
+
+# LINT
+
+Keep the code tidy:
+
+```
+$ make lint
+```
