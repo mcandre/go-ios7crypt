@@ -5,7 +5,7 @@ test:
 	ios7crypt -d 07022e42450c00
 
 govet:
-	go vet -v
+	find . -name vendor -prune -o -name '*.go' -exec go vet -v {} \;
 
 gofmt:
 	find . -name vendor -prune -o -name '*.go' -exec gofmt -s -w {} \;
