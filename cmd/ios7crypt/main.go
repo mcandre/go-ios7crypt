@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/docopt/docopt-go"
 	"github.com/mcandre/go-ios7crypt"
 )
