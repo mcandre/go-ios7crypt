@@ -1,7 +1,17 @@
-all: gotest
+COVER_PROFILE=cover.out
+COVER_HTML=cover.html
 
-gotest:
-	go test -cover
+.PHONY: $(COVER_PROFILE) $(COVER_HTML)
+
+all: coverage
+
+coverage: $(COVER_HTML)
+
+$(COVER_HTML): $(COVER_PROFILE)
+	go tool cover -html=$(COVER_PROFILE) -o $(COVER_HTML)
+
+$(COVER_PROFILE):
+	go test -coverprofile=$(COVER_PROFILE)
 
 integration-test:
 	ios7crypt -e monkey

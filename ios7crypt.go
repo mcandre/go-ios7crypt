@@ -19,12 +19,7 @@ func Xlat(index uint) byte {
 }
 
 func Encrypt(password string) (string, error) {
-	seedBig, err := rand.Int(rand.Reader, big.NewInt(16))
-
-	if err != nil {
-		return "", errors.New("Seed outside of [0, 15]")
-	}
-
+	seedBig, _ := rand.Int(rand.Reader, big.NewInt(16))
 	seed := uint(seedBig.Int64())
 
 	var hashBuffer bytes.Buffer
@@ -52,10 +47,10 @@ func Decrypt(hash string) (string, error) {
 	seed, err := strconv.Atoi(seedString)
 
 	if seed < 0 {
-		return "", errors.New("Seed fails to be non-negative")
+		return "", errors.New("Hash seed fails to be non-negative")
 	}
 
-	if err != nil {
+	if err != nil || seed < 0 || seed > 16 {
 		return "", errors.New("Hash seed fails to parse as a decimal number in [0, 16)")
 	}
 
