@@ -1,7 +1,7 @@
 all: gotest
 
 gotest:
-	go test
+	go test -cover
 
 integration-test:
 	ios7crypt -e monkey
