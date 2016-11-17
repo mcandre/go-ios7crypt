@@ -47,6 +47,18 @@ $ git submodule update --init --recursive
 $ sh -c 'cd cmd/ios7crypt && go install'
 ```
 
+# TEST REMOTELY
+
+```
+$ go test github.com/mcandre/go-ios7crypt/...
+```
+
+# TEST LOCALLY
+
+```
+$ go test
+```
+
 # LINT
 
 Keep the code tidy:

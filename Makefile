@@ -1,6 +1,9 @@
-all: test
+all: gotest
 
-test:
+gotest:
+	go test
+
+integration-test:
 	ios7crypt -e monkey
 	ios7crypt -d 07022e42450c00
 
