@@ -7,7 +7,6 @@ import (
 	"github.com/mcandre/go-ios7crypt"
 )
 
-
 func TestSymmetricEncryption(t *testing.T) {
 	symmetricProperty := func(s string) bool {
 		hash, err := ios7crypt.Encrypt(s)
@@ -24,7 +23,6 @@ func TestSymmetricEncryption(t *testing.T) {
 
 		return password == s
 	}
-
 
 	err := quick.Check(symmetricProperty, nil)
 
