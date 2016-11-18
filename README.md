@@ -8,6 +8,13 @@ $ ios7crypt -e monkey
 
 $ ios7crypt -d 07022e42450c00
 monkey
+
+$ ios7crypt
+Usage:
+  ios7crypt -e <password>
+  ios7crypt -d <hash>
+  ios7crypt -h
+  ios7crypt -v
 ```
 
 # ABOUT
