@@ -79,6 +79,14 @@ go tool cover -html=cover.out -o cover.html
 $ open cover.html
 ```
 
+# BUILD AND ARCHIVE PORTS
+
+```
+$ make build-ports
+$ ls cmd/ios7crypt/bin/ios7crypt-0.0.1.zip
+```
+
+
 # LINT
 
 Keep the code tidy:
