@@ -29,16 +29,10 @@ goimport:
 
 lint: govet gofmt goimport
 
-build-ports:
-	sh -c "cd cmd/ios7crypt && mkdir -p bin/ios7crypt-$(VERSION)/linux/amd64 && env GOOS=linux GOARCH=amd64 go build -o bin/ios7crypt-$(VERSION)/linux/amd64/ios7crypt"
-	sh -c "cd cmd/ios7crypt && mkdir -p bin/ios7crypt-$(VERSION)/linux/386 && env GOOS=linux GOARCH=386 go build -o bin/ios7crypt-$(VERSION)/linux/386/ios7crypt"
-	sh -c "cd cmd/ios7crypt && mkdir -p bin/ios7crypt-$(VERSION)/darwin/amd64 && env GOOS=darwin GOARCH=amd64 go build -o bin/ios7crypt-$(VERSION)/darwin/amd64/ios7crypt"
-	sh -c "cd cmd/ios7crypt && mkdir -p bin/ios7crypt-$(VERSION)/darwin/386 && env GOOS=darwin GOARCH=386 go build -o bin/ios7crypt-$(VERSION)/darwin/386/ios7crypt"
-	sh -c "cd cmd/ios7crypt && mkdir -p bin/ios7crypt-$(VERSION)/windows/amd64 && env GOOS=windows GOARCH=amd64 go build -o bin/ios7crypt-$(VERSION)/windows/amd64/ios7crypt.exe"
-	sh -c "cd cmd/ios7crypt && mkdir -p bin/ios7crypt-$(VERSION)/windows/386 && env GOOS=windows GOARCH=386 go build -o bin/ios7crypt-$(VERSION)/windows/386/ios7crypt.exe"
-	sh -c "cd cmd/ios7crypt/bin && zip -r ios7crypt-$(VERSION).zip ios7crypt-$(VERSION)/"
+port:
+	sh port.sh ios7crypt $(VERSION) bin cmd
 
 clean: clean-ports
 
 clean-ports:
-	rm -rf cmd/ios7crypt/bin
+	rm -rf bin

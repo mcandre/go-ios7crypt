@@ -82,8 +82,9 @@ $ open cover.html
 # BUILD AND ARCHIVE PORTS
 
 ```
-$ make build-ports
-$ ls cmd/ios7crypt/bin/ios7crypt-0.0.1.zip
+$ make port
+...
+Archived ports in bin/ios7crypt-0.0.1.zip
 ```
 
 
