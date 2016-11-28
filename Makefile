@@ -2,7 +2,7 @@ VERSION=0.0.1
 COVER_PROFILE=cover.out
 COVER_HTML=cover.html
 
-.PHONY: $(COVER_PROFILE) $(COVER_HTML) build-ports clean clean-ports
+.PHONY: $(COVER_PROFILE) $(COVER_HTML) port clean clean-ports
 
 all: coverage
 
