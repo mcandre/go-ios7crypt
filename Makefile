@@ -30,7 +30,7 @@ goimport:
 lint: govet gofmt goimport
 
 port:
-	goport -l $(VERSION)
+	goport -a ios7crypt -l $(VERSION)
 
 clean: clean-ports
 
