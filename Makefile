@@ -36,7 +36,7 @@ archive-ports: bin
 	sh -c "cd bin && zip -r ios7crypt-$(VERSION).zip ios7crypt-$(VERSION) $(ZIP_EXCLUDES)"
 
 bin:
-	gox -output="bin/ios7crypt-$(VERSION)/{{.OS}}/{{.Arch}}/{{.Dir}}" ./cmd/...
+	gox -output="bin/{{.Dir}}-$(VERSION)/{{.OS}}/{{.Arch}}/{{.Dir}}" ./cmd/...
 
 clean: clean-ports
 
