@@ -1,6 +1,7 @@
 VERSION=0.0.1
 COVER_PROFILE=cover.out
 COVER_HTML=cover.html
+ZIP_EXCLUDES=-x '*.DS_Store' -x '*Thumbs.db'
 
 .PHONY: $(COVER_PROFILE) $(COVER_HTML) port clean clean-ports
 
@@ -29,8 +30,13 @@ goimport:
 
 lint: govet gofmt goimport
 
-port:
-	goport -a ios7crypt -l $(VERSION)
+port: archive-ports
+
+archive-ports: bin
+	sh -c "cd bin && zip -r ios7crypt-$(VERSION).zip ios7crypt-$(VERSION) $(ZIP_EXCLUDES)"
+
+bin:
+	gox -output="bin/ios7crypt-$(VERSION)/{{.OS}}/{{.Arch}}/{{.Dir}}" ./cmd/...
 
 clean: clean-ports
 
