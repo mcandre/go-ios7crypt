@@ -9,11 +9,14 @@ import (
 )
 
 func TestDecryptInvalidHashTable(t *testing.T) {
-	testCases := []struct{Expected error; Input string} {
-		{ errors.New("Hash missing seed digits"), "" },
-		{ errors.New("Hash seed eed fails to be non-negative"), "-1ffffffff" },
-		{ errors.New("Hash seed fails to parse as a decimal number in [0,16)"), "17ffffffff" },
-		{ errors.New("Hash fails to parse as a hexadecimal number ([0-9a-fA-F]{2}+)"), "00gg" },
+	testCases := []struct {
+		Expected error
+		Input    string
+	}{
+		{errors.New("Hash missing seed digits"), ""},
+		{errors.New("Hash seed eed fails to be non-negative"), "-1ffffffff"},
+		{errors.New("Hash seed fails to parse as a decimal number in [0,16)"), "17ffffffff"},
+		{errors.New("Hash fails to parse as a hexadecimal number ([0-9a-fA-F]{2}+)"), "00gg"},
 	}
 
 	for _, testCase := range testCases {
