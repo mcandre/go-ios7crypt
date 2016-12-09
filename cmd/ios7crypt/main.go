@@ -20,11 +20,7 @@ Options:
   -v --version             Show version information`
 
 func main() {
-	arguments, err := docopt.Parse(Usage, nil, true, ios7crypt.Version, false)
-
-	if err != nil {
-		fmt.Println(Usage)
-	}
+	arguments, _ := docopt.Parse(Usage, nil, true, ios7crypt.Version, false)
 
 	password, passwordStatus := arguments["--encrypt"].(string)
 	hash, hashStatus := arguments["--decrypt"].(string)
