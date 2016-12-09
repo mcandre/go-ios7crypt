@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/docopt/docopt-go"
 	"github.com/mcandre/go-ios7crypt"
@@ -31,7 +32,7 @@ func main() {
 		hash, err := ios7crypt.Encrypt(password)
 
 		if err != nil {
-			panic(err)
+			log.Panic(err)
 		}
 
 		fmt.Println(hash)
@@ -39,7 +40,7 @@ func main() {
 		password, err := ios7crypt.Decrypt(hash)
 
 		if err != nil {
-			panic(err)
+			log.Panic(err)
 		}
 
 		fmt.Println(password)
