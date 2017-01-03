@@ -1,3 +1,4 @@
+// Package main provides an ios7crypt executable.
 package main
 
 import (
@@ -8,6 +9,7 @@ import (
 	"github.com/mcandre/go-ios7crypt"
 )
 
+// Usage is a docopt-formatted specification for this application's command line interface.
 const Usage = `Usage:
   ios7crypt -e <password>
   ios7crypt -d <hash>
@@ -20,6 +22,7 @@ Options:
   -h --help                Show usage information
   -v --version             Show version information`
 
+// main is the entrypoint for this application.
 func main() {
 	arguments, _ := docopt.Parse(Usage, nil, true, ios7crypt.Version, false)
 
