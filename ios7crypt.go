@@ -25,7 +25,7 @@ var xlat = [...]byte{
 	0x3b, 0x66, 0x67, 0x38, 0x37,
 }
 
-// Xlat simulates a wrapped static translation key.
+// Xlat simulates a static, repeating key sequence.
 func Xlat(index uint) byte {
 	return xlat[int(index)%len(xlat)]
 }
