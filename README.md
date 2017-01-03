@@ -29,6 +29,10 @@ IOS7Crypt is an educational resource illustrating some fundamentals of introduct
 
 https://github.com/mcandre/go-ios7crypt/releases
 
+# DOCUMENTATION
+
+https://godoc.org/github.com/mcandre/go-ios7crypt
+
 # DEVELOPMENT REQUIREMENTS
 
 * [Go](https://golang.org) 1.7+ with [$GOPATH configured](https://gist.github.com/mcandre/ef73fb77a825bd153b7836ddbd9a6ddc)
