@@ -1,3 +1,4 @@
+// Package ios7crypt provides primitives for encrypting and decrypting text according to the old Cisco type 5 algorithm.
 package ios7crypt
 
 import (
@@ -10,8 +11,10 @@ import (
 	"strconv"
 )
 
+// Version is a semver constant for this package.
 const Version = "0.0.1"
 
+// xlat is the full, reverse engineered static key for old Cisco type 5 passwords.
 var xlat = [...]byte{
 	0x64, 0x73, 0x66, 0x64, 0x3b, 0x6b, 0x66, 0x6f,
 	0x41, 0x2c, 0x2e, 0x69, 0x79, 0x65, 0x77, 0x72,
@@ -22,10 +25,12 @@ var xlat = [...]byte{
 	0x3b, 0x66, 0x67, 0x38, 0x37,
 }
 
+// Xlat simulates a wrapped static translation key.
 func Xlat(index uint) byte {
 	return xlat[int(index)%len(xlat)]
 }
 
+// Encrypt returns an unbounded, type 5 encrypted form of the given password text.
 func Encrypt(password string) (string, error) {
 	seedBig, _ := rand.Int(rand.Reader, big.NewInt(16))
 	seed := uint(seedBig.Int64())
@@ -45,6 +50,7 @@ func Encrypt(password string) (string, error) {
 	return hashBuffer.String(), nil
 }
 
+// Decrypt attempts to invert a type 5 hash into the original password, returning an error in the event of failure.
 func Decrypt(hash string) (string, error) {
 	if len(hash) < 2 {
 		return "", errors.New("Hash missing seed digits")
