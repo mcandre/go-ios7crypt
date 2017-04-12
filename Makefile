@@ -55,8 +55,13 @@ port: archive-ports
 archive-ports: bin
 	zipc -C bin "ios7crypt-$(VERSION).zip" "ios7crypt-$(VERSION)"
 
-bin:
+bin-rest:
 	gox -output="bin/{{.Dir}}-$(VERSION)/{{.OS}}/{{.Arch}}/{{.Dir}}" ./cmd/...
+
+bin-musl:
+	sh crosscompile-musl.sh $(VERSION)
+
+bin: bin-rest bin-musl
 
 clean: clean-ports
 

@@ -39,6 +39,7 @@ https://godoc.org/github.com/mcandre/go-ios7crypt
 
 ## Optional
 
+* [Docker](https://www.docker.com)
 * [coreutils](https://www.gnu.org/software/coreutils/coreutils.html)
 * [make](https://www.gnu.org/software/make/)
 * [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) (e.g. `go get golang.org/x/tools/cmd/goimports`)
@@ -93,6 +94,8 @@ $ open cover.html
 # PORT
 
 ```
+$ docker pull mcandre/docker-gox:musl
+
 $ make port
 ```
 
