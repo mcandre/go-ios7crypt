@@ -30,8 +30,8 @@ func Xlat(index uint) byte {
 	return xlat[int(index)%len(xlat)]
 }
 
-// Encrypt returns an unbounded, type 5 encrypted form of the given password text.
-func Encrypt(password string) (string, error) {
+// Encrypt returns an unbounded, type 7 encrypted form of the given password text.
+func Encrypt(password string) string {
 	seedBig, _ := rand.Int(rand.Reader, big.NewInt(16))
 	seed := uint(seedBig.Int64())
 
@@ -47,10 +47,10 @@ func Encrypt(password string) (string, error) {
 		hashBuffer.WriteString(fmt.Sprintf("%02x", cipherByte))
 	}
 
-	return hashBuffer.String(), nil
+	return hashBuffer.String()
 }
 
-// Decrypt attempts to invert a type 5 hash into the original password, returning an error in the event of failure.
+// Decrypt attempts to invert a type 7 hash into the original password, returning an error in the event of failure.
 func Decrypt(hash string) (string, error) {
 	if len(hash) < 2 {
 		return "", errors.New("Hash missing seed digits")

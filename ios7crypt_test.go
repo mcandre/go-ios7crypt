@@ -30,11 +30,7 @@ func TestDecryptInvalidHashTable(t *testing.T) {
 
 func TestSymmetricEncryption(t *testing.T) {
 	symmetricProperty := func(s string) bool {
-		hash, err := ios7crypt.Encrypt(s)
-
-		if err != nil {
-			return false
-		}
+		hash := ios7crypt.Encrypt(s)
 
 		password, err := ios7crypt.Decrypt(hash)
 
