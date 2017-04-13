@@ -95,6 +95,7 @@ $ open cover.html
 
 ```
 $ docker pull mcandre/docker-gox:musl
+$ docker pull mcandre/docker-gox:gnu
 
 $ make port
 ```
