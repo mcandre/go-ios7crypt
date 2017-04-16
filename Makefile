@@ -55,13 +55,22 @@ port: archive-ports
 archive-ports: bin
 	zipc -C bin "ios7crypt-$(VERSION).zip" "ios7crypt-$(VERSION)"
 
-bin-nonmusl:
-	sh crosscompile-nonmusl.sh $(VERSION)
+bin-glibc:
+	sh crosscompile-glibc.sh $(VERSION)
 
 bin-musl:
 	sh crosscompile-musl.sh $(VERSION)
 
-bin: bin-nonmusl bin-musl
+bin-dragonfly:
+	sh crosscompile-dragonfly.sh $(VERSION)
+
+bin-nacl:
+	sh crosscompile-nacl.sh $(VERSION)
+
+bin-most:
+	sh crosscompile-most.sh $(VERSION)
+
+bin: bin-glibc bin-musl bin-dragonfly bin-nacl bin-most
 
 clean: clean-ports
 

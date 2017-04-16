@@ -94,10 +94,63 @@ $ open cover.html
 # PORT
 
 ```
+$ docker pull mcandre/docker-gox:glibc
 $ docker pull mcandre/docker-gox:musl
-$ docker pull mcandre/docker-gox:gnu
 
 $ make port
+
+$ unzip -t bin/ios7crypt-*.zip
+Archive:  bin/ios7crypt-0.0.2.zip
+    testing: ios7crypt-0.0.2/darwin/   OK
+    testing: ios7crypt-0.0.2/darwin/386/   OK
+    testing: ios7crypt-0.0.2/darwin/386/ios7crypt   OK
+    testing: ios7crypt-0.0.2/darwin/amd64/   OK
+    testing: ios7crypt-0.0.2/darwin/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/dragonfly/   OK
+    testing: ios7crypt-0.0.2/dragonfly/amd64/   OK
+    testing: ios7crypt-0.0.2/dragonfly/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/freebsd/   OK
+    testing: ios7crypt-0.0.2/freebsd/386/   OK
+    testing: ios7crypt-0.0.2/freebsd/386/ios7crypt   OK
+    testing: ios7crypt-0.0.2/freebsd/amd64/   OK
+    testing: ios7crypt-0.0.2/freebsd/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/linux-glibc/   OK
+    testing: ios7crypt-0.0.2/linux-glibc/386/   OK
+    testing: ios7crypt-0.0.2/linux-glibc/386/ios7crypt   OK
+    testing: ios7crypt-0.0.2/linux-glibc/amd64/   OK
+    testing: ios7crypt-0.0.2/linux-glibc/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/linux-musl/   OK
+    testing: ios7crypt-0.0.2/linux-musl/amd64/   OK
+    testing: ios7crypt-0.0.2/linux-musl/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/nacl/    OK
+    testing: ios7crypt-0.0.2/nacl/amd64p32/   OK
+    testing: ios7crypt-0.0.2/nacl/amd64p32/ios7crypt   OK
+    testing: ios7crypt-0.0.2/nacl/arm/   OK
+    testing: ios7crypt-0.0.2/nacl/arm/ios7crypt   OK
+    testing: ios7crypt-0.0.2/netbsd/   OK
+    testing: ios7crypt-0.0.2/netbsd/386/   OK
+    testing: ios7crypt-0.0.2/netbsd/386/ios7crypt   OK
+    testing: ios7crypt-0.0.2/netbsd/amd64/   OK
+    testing: ios7crypt-0.0.2/netbsd/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/openbsd/   OK
+    testing: ios7crypt-0.0.2/openbsd/386/   OK
+    testing: ios7crypt-0.0.2/openbsd/386/ios7crypt   OK
+    testing: ios7crypt-0.0.2/openbsd/amd64/   OK
+    testing: ios7crypt-0.0.2/openbsd/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/plan9/   OK
+    testing: ios7crypt-0.0.2/plan9/386/   OK
+    testing: ios7crypt-0.0.2/plan9/386/ios7crypt   OK
+    testing: ios7crypt-0.0.2/plan9/amd64/   OK
+    testing: ios7crypt-0.0.2/plan9/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/solaris/   OK
+    testing: ios7crypt-0.0.2/solaris/amd64/   OK
+    testing: ios7crypt-0.0.2/solaris/amd64/ios7crypt   OK
+    testing: ios7crypt-0.0.2/windows/   OK
+    testing: ios7crypt-0.0.2/windows/386/   OK
+    testing: ios7crypt-0.0.2/windows/386/ios7crypt.exe   OK
+    testing: ios7crypt-0.0.2/windows/amd64/   OK
+    testing: ios7crypt-0.0.2/windows/amd64/ios7crypt.exe   OK
+No errors detected in compressed data of bin/ios7crypt-0.0.2.zip.
 ```
 
 # LINT
