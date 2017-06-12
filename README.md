@@ -3,18 +3,21 @@
 # EXAMPLE
 
 ```
-$ ios7crypt -e monkey
-12140a19190e15
+$ ios7crypt -encrypt monkey
+020b0b55000316
 
-$ ios7crypt -d 07022e42450c00
+$ ios7crypt -decrypt 020b0b55000316
 monkey
 
-$ ios7crypt
-Usage:
-  ios7crypt -e <password>
-  ios7crypt -d <hash>
-  ios7crypt -h
-  ios7crypt -v
+$ ios7crypt -help
+  -decrypt string
+        Decrypt a hash
+  -encrypt string
+        Encrypt a password
+  -help
+        Show usage information
+  -version
+        Show version information
 ```
 
 # ABOUT
