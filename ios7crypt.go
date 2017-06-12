@@ -12,7 +12,7 @@ import (
 )
 
 // Version is a semver constant for this package.
-const Version = "0.0.3"
+const Version = "0.0.4"
 
 // xlat is the full, reverse engineered static key for old Cisco type 5 passwords.
 var xlat = [...]byte{

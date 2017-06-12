@@ -1,4 +1,4 @@
-VERSION=0.0.3
+VERSION=0.0.4
 COVER_PROFILE=cover.out
 COVER_HTML=cover.html
 
