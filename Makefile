@@ -53,7 +53,7 @@ lint: govet golint gofmt goimport errcheck bashate shlint checkbashisms shellche
 port: archive-ports
 
 archive-ports: bin
-	zipc -C bin "ios7crypt-$(VERSION).zip" "ios7crypt-$(VERSION)"
+	zipc -chdir bin "ios7crypt-$(VERSION).zip" "ios7crypt-$(VERSION)"
 
 bin-glibc:
 	sh crosscompile-glibc.sh $(VERSION)
