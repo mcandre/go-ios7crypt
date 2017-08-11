@@ -7,6 +7,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
+	"log"
 	"math/big"
 	"strconv"
 )
@@ -32,7 +33,12 @@ func Xlat(index uint) byte {
 
 // Encrypt returns an unbounded, type 7 encrypted form of the given password text.
 func Encrypt(password string) string {
-	seedBig, _ := rand.Int(rand.Reader, big.NewInt(16))
+	seedBig, err := rand.Int(rand.Reader, big.NewInt(16))
+
+	if err != nil {
+		log.Panic(err)
+	}
+
 	seed := uint(seedBig.Int64())
 
 	var hashBuffer bytes.Buffer
