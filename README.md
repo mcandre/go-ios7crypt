@@ -68,7 +68,7 @@ $ go get github.com/mcandre/go-ios7crypt/...
 
 ```
 $ mkdir -p $GOPATH/src/github.com/mcandre
-$ git clone git@github.com:mcandre/go-ios7crypt.git $GOPATH/src/github.com/mcandre/go-ios7crypt
+$ git clone https://github.com/mcandre/go-ios7crypt.git $GOPATH/src/github.com/mcandre/go-ios7crypt
 $ cd $GOPATH/src/github.com/mcandre/go-ios7crypt
 $ git submodule update --init --recursive
 $ sh -c 'cd cmd/ios7crypt && go install'
