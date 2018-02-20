@@ -45,6 +45,9 @@ https://godoc.org/github.com/mcandre/go-ios7crypt
 * [Docker](https://www.docker.com)
 * [coreutils](https://www.gnu.org/software/coreutils/coreutils.html)
 * [make](https://www.gnu.org/software/make/)
+* [bashate](https://github.com/openstack-dev/bashate)
+* [shlint](https://rubygems.org/gems/shlint)
+* [shellcheck](http://hackage.haskell.org/package/ShellCheck)
 * [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) (e.g. `go get golang.org/x/tools/cmd/goimports`)
 * [golint](https://github.com/golang/lint) (e.g. `go get github.com/golang/lint/golint`)
 * [errcheck](https://github.com/kisielk/errcheck) (e.g. `go get github.com/kisielk/errcheck`)
@@ -53,9 +56,7 @@ https://godoc.org/github.com/mcandre/go-ios7crypt
 * [zipc](https://github.com/mcandre/zipc) (e.g. `go get github.com/mcandre/zipc/...`)
 * [editorconfig-cli](https://github.com/amyboyd/editorconfig-cli) (e.g. `go get github.com/amyboyd/editorconfig-cli`)
 * [flcl](https://github.com/mcandre/flcl) (e.g. `go get github.com/mcandre/flcl/...`)
-* [bashate](https://github.com/openstack-dev/bashate)
-* [shlint](https://rubygems.org/gems/shlint)
-* [shellcheck](http://hackage.haskell.org/package/ShellCheck)
+* [stank](https://github.com/mcandre/stank) (e.g. `go get github.com/mcandre/stank/...`)
 
 # INSTALL FROM REMOTE GIT REPOSITORY
 
