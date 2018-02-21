@@ -1,0 +1,51 @@
+required = [
+  "github.com/alexkohler/nakedret",
+  "github.com/amyboyd/editorconfig-cli",
+  "github.com/golang/lint",
+  "github.com/kisielk/errcheck",
+  "github.com/mcandre/zipc",
+  "github.com/mcandre/flcl",
+  "github.com/mcandre/stank",
+  "github.com/mitchellh/gox",
+  "golang.org/x/tools",
+]
+
+[[constraint]]
+  name = "github.com/alexkohler/nakedret"
+  revision = "c0e305a4f690fed163d47628bcc06a6d5655bf92"
+
+[[constraint]]
+  name = "github.com/amyboyd/editorconfig-cli"
+  version = "0.1.0"
+
+[[constraint]]
+  name = "github.com/golang/lint"
+  revision = "e14d9b0f1d332b1420c1ffa32562ad2dc84d645d"
+
+[[constraint]]
+  name = "github.com/kisielk/errcheck"
+  revision = "b1445a9dd8285a50c6d1661d16f0a9ceb08125f7"
+
+[[constraint]]
+  name = "github.com/mcandre/zipc"
+  version = "v0.0.2"
+
+[[constraint]]
+  name = "github.com/mcandre/flcl"
+  version = "v0.0.2"
+
+[[constraint]]
+  name = "github.com/mcandre/stank"
+  version = "v0.0.12"
+
+[[constraint]]
+  name = "github.com/mitchellh/gox"
+  version = "v0.4.0"
+
+[[constraint]]
+  name = "golang.org/x/tools"
+  branch = "master"
+
+[prune]
+  go-tests = true
+  unused-packages = true
