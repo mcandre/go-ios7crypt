@@ -36,27 +36,21 @@ https://github.com/mcandre/go-ios7crypt/releases
 
 https://godoc.org/github.com/mcandre/go-ios7crypt
 
-# DEVELOPMENT REQUIREMENTS
+# RUNTIME REQUIREMENTS
 
-* [Go](https://golang.org) 1.7+ with [$GOPATH configured](https://gist.github.com/mcandre/ef73fb77a825bd153b7836ddbd9a6ddc)
+(None)
 
-## Optional
+# BUILDTIME REQUIREMENTS
 
-* [Docker](https://www.docker.com)
-* [coreutils](https://www.gnu.org/software/coreutils/coreutils.html)
-* [make](https://www.gnu.org/software/make/)
-* [bashate](https://github.com/openstack-dev/bashate)
-* [shlint](https://rubygems.org/gems/shlint)
-* [shellcheck](http://hackage.haskell.org/package/ShellCheck)
+* [Go](https://golang.org/) 1.9+
+* [Mage](https://magefile.org/) (e.g., `go get github.com/magefile/mage`)
 * [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) (e.g. `go get golang.org/x/tools/cmd/goimports`)
 * [golint](https://github.com/golang/lint) (e.g. `go get github.com/golang/lint/golint`)
 * [errcheck](https://github.com/kisielk/errcheck) (e.g. `go get github.com/kisielk/errcheck`)
 * [nakedret](https://github.com/alexkohler/nakedret) (e.g. `go get github.com/alexkohler/nakedret`)
-* [gox](https://github.com/mitchellh/gox) (e.g. `go get github.com/mitchellh/gox`)
+* [Docker](https://www.docker.com/)
+* [goxcart](https://github.com/mcandre/goxcart) (e.g., `github.com/mcandre/goxcart/...`)
 * [zipc](https://github.com/mcandre/zipc) (e.g. `go get github.com/mcandre/zipc/...`)
-* [editorconfig-cli](https://github.com/amyboyd/editorconfig-cli) (e.g. `go get github.com/amyboyd/editorconfig-cli`)
-* [flcl](https://github.com/mcandre/flcl) (e.g. `go get github.com/mcandre/flcl/...`)
-* [stank](https://github.com/mcandre/stank) (e.g. `go get github.com/mcandre/stank/...`)
 
 # INSTALL FROM REMOTE GIT REPOSITORY
 
@@ -73,7 +67,7 @@ $ mkdir -p $GOPATH/src/github.com/mcandre
 $ git clone https://github.com/mcandre/go-ios7crypt.git $GOPATH/src/github.com/mcandre/go-ios7crypt
 $ cd $GOPATH/src/github.com/mcandre/go-ios7crypt
 $ git submodule update --init --recursive
-$ sh -c 'cd cmd/ios7crypt && go install'
+$ go install ./...
 ```
 
 # TEST REMOTELY
@@ -91,72 +85,14 @@ $ go test
 # COVERAGE
 
 ```
-$ make coverage
-go test -coverprofile=cover.out
-go tool cover -html=cover.out -o cover.html
-$ open cover.html
+$ mage coverageHTML
+$ karp cover.html
 ```
 
 # PORT
 
 ```
-$ docker pull mcandre/docker-gox:glibc
-$ docker pull mcandre/docker-gox:musl
-
-$ make port
-
-$ unzip -t bin/ios7crypt-*.zip
-Archive:  bin/ios7crypt-0.0.4.zip
-    testing: ios7crypt-0.0.4/darwin/   OK
-    testing: ios7crypt-0.0.4/darwin/386/   OK
-    testing: ios7crypt-0.0.4/darwin/386/ios7crypt   OK
-    testing: ios7crypt-0.0.4/darwin/amd64/   OK
-    testing: ios7crypt-0.0.4/darwin/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/dragonfly/   OK
-    testing: ios7crypt-0.0.4/dragonfly/amd64/   OK
-    testing: ios7crypt-0.0.4/dragonfly/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/freebsd/   OK
-    testing: ios7crypt-0.0.4/freebsd/386/   OK
-    testing: ios7crypt-0.0.4/freebsd/386/ios7crypt   OK
-    testing: ios7crypt-0.0.4/freebsd/amd64/   OK
-    testing: ios7crypt-0.0.4/freebsd/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/linux-glibc/   OK
-    testing: ios7crypt-0.0.4/linux-glibc/386/   OK
-    testing: ios7crypt-0.0.4/linux-glibc/386/ios7crypt   OK
-    testing: ios7crypt-0.0.4/linux-glibc/amd64/   OK
-    testing: ios7crypt-0.0.4/linux-glibc/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/linux-musl/   OK
-    testing: ios7crypt-0.0.4/linux-musl/amd64/   OK
-    testing: ios7crypt-0.0.4/linux-musl/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/nacl/    OK
-    testing: ios7crypt-0.0.4/nacl/amd64p32/   OK
-    testing: ios7crypt-0.0.4/nacl/amd64p32/ios7crypt   OK
-    testing: ios7crypt-0.0.4/nacl/arm/   OK
-    testing: ios7crypt-0.0.4/nacl/arm/ios7crypt   OK
-    testing: ios7crypt-0.0.4/netbsd/   OK
-    testing: ios7crypt-0.0.4/netbsd/386/   OK
-    testing: ios7crypt-0.0.4/netbsd/386/ios7crypt   OK
-    testing: ios7crypt-0.0.4/netbsd/amd64/   OK
-    testing: ios7crypt-0.0.4/netbsd/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/openbsd/   OK
-    testing: ios7crypt-0.0.4/openbsd/386/   OK
-    testing: ios7crypt-0.0.4/openbsd/386/ios7crypt   OK
-    testing: ios7crypt-0.0.4/openbsd/amd64/   OK
-    testing: ios7crypt-0.0.4/openbsd/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/plan9/   OK
-    testing: ios7crypt-0.0.4/plan9/386/   OK
-    testing: ios7crypt-0.0.4/plan9/386/ios7crypt   OK
-    testing: ios7crypt-0.0.4/plan9/amd64/   OK
-    testing: ios7crypt-0.0.4/plan9/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/solaris/   OK
-    testing: ios7crypt-0.0.4/solaris/amd64/   OK
-    testing: ios7crypt-0.0.4/solaris/amd64/ios7crypt   OK
-    testing: ios7crypt-0.0.4/windows/   OK
-    testing: ios7crypt-0.0.4/windows/386/   OK
-    testing: ios7crypt-0.0.4/windows/386/ios7crypt.exe   OK
-    testing: ios7crypt-0.0.4/windows/amd64/   OK
-    testing: ios7crypt-0.0.4/windows/amd64/ios7crypt.exe   OK
-No errors detected in compressed data of bin/ios7crypt-0.0.4.zip.
+$ mage port
 ```
 
 # LINT
@@ -164,9 +100,5 @@ No errors detected in compressed data of bin/ios7crypt-0.0.4.zip.
 Keep the code tidy:
 
 ```
-$ make lint
+$ mage lint
 ```
-
-# GIT HOOKS
-
-See `hooks/`.
