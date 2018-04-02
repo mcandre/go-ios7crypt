@@ -43,12 +43,12 @@ https://godoc.org/github.com/mcandre/go-ios7crypt
 # BUILDTIME REQUIREMENTS
 
 * [Go](https://golang.org/) 1.9+
+* [Docker](https://www.docker.com/)
 * [Mage](https://magefile.org/) (e.g., `go get github.com/magefile/mage`)
 * [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) (e.g. `go get golang.org/x/tools/cmd/goimports`)
 * [golint](https://github.com/golang/lint) (e.g. `go get github.com/golang/lint/golint`)
 * [errcheck](https://github.com/kisielk/errcheck) (e.g. `go get github.com/kisielk/errcheck`)
 * [nakedret](https://github.com/alexkohler/nakedret) (e.g. `go get github.com/alexkohler/nakedret`)
-* [Docker](https://www.docker.com/)
 * [goxcart](https://github.com/mcandre/goxcart) (e.g., `github.com/mcandre/goxcart/...`)
 * [zipc](https://github.com/mcandre/zipc) (e.g. `go get github.com/mcandre/zipc/...`)
 
