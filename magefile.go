@@ -96,7 +96,7 @@ func Goxcart() error {
 		"-repo",
 		repoNamespace,
 		"-banner",
-		ios7crypt.Version,
+		portBasename,
 	)
 }
 
