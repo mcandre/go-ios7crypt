@@ -54,6 +54,7 @@ https://godoc.org/github.com/mcandre/go-ios7crypt
 * [nakedret](https://github.com/alexkohler/nakedret) (e.g. `go get github.com/alexkohler/nakedret`)
 * [goxcart](https://github.com/mcandre/goxcart) (e.g., `github.com/mcandre/goxcart/...`)
 * [zipc](https://github.com/mcandre/zipc) (e.g. `go get github.com/mcandre/zipc/...`)
+* [karp](https://github.com/mcandre/karp) (e.g., `go get github.com/mcandre/karp/...`)
 
 # INSTALL FROM REMOTE GIT REPOSITORY
 
