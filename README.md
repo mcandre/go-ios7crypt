@@ -42,7 +42,7 @@ https://godoc.org/github.com/mcandre/go-ios7crypt
 
 # BUILDTIME REQUIREMENTS
 
-* [Go](https://golang.org/) 1.9+
+* [Go](https://golang.org/) 1.11+
 
 ## Recommended
 
